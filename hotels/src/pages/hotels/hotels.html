@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Гостиницы</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list  >
+    <button ion-item text-wrap  *ngFor="let hotel of finishHotels" [navPush]="pushPage" [navParams]="hotel">
+      <ion-avatar item-start>
+        <img src="{{hotel.imageUrl}}">
+      </ion-avatar>
+        <div style="padding-right: 20%;">
+          <h2>{{hotel.title}}</h2>
+          <p>{{hotel.address}}</p>
+        </div>
+    </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+    <button ion-button  no-margin full (click)="butclick()">Фильтр</button>
+</ion-footer>

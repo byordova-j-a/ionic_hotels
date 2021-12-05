@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Фильтр</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Цена от</ion-label>
+        <ion-input [(ngModel)]="from"  (focus)="FocusSelect($event)"  (change)="onFromChange()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Цена до</ion-label>
+        <ion-input [(ngModel)]="to"  (focus)="FocusSelect($event)" (change)="onToChange()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Обязательное наличие парковки</ion-label>
+        <ion-checkbox [(ngModel)]="park"></ion-checkbox>
+      </ion-item>
+  </ion-list>
+</ion-content>
+   
+<ion-footer>
+  <button ion-button no-margin full (click)="closeSearch()">ок </button>
+</ion-footer>
